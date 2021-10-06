@@ -1,3 +1,6 @@
+#https://velog.io/@happysang/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+#https://velog.io/@happysang/1.-%ED%8C%8C%EC%9D%B4%EC%8D%AC
+
 # 인덴트
 # 탭하나에 공백 4칸. 강제는 아니고 선택적으로 적용이 가능하다.
 def long_function_name(var_one, var_two, var_three, var_four):

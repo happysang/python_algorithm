@@ -1,3 +1,5 @@
+#https://velog.io/@happysang/%EB%B0%B0%EC%97%B4
+
 from typing import List
 def three_sum1(nums:List[List[int]]):
     result = []

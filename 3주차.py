@@ -1,3 +1,5 @@
+#https://velog.io/@happysang/%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A1%B0%EC%9E%91
+
 def palindrome(text: str) -> bool:
     str = []
     for x in text:

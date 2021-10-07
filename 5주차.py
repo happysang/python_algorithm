@@ -1,18 +1,4 @@
-# def reverseList(l1:Listnode):
-#     node, prev = l1, None
-    
-#     while node:
-#         next, node.next = node.next, prev
-#         prev, node = node, next
-
-#     return prev
-
-
-# print(reverseList((1->2->3))
-
-
 #Single Linked List
-
 class Node(object):
     def __init__(self, data, next = None):
         self.data = data
@@ -111,23 +97,51 @@ class SList(object):
                 target = target.next
 
 
-mylist = SList()
-mylist.append('A')
-mylist.printlist()
-mylist.append('B')
-mylist.printlist()
-mylist.append('C')
-mylist.printlist()
-mylist.insert('D', 1)
-mylist.printlist()
-mylist.appendleft('E')
-mylist.printlist()
-print(mylist.listSize())
-mylist.delete(0)
-mylist.printlist()
-mylist.delete(3)
-mylist.printlist()
-mylist.delete(0)
-mylist.printlist()
-mylist.appendleft('A')
-mylist.printlist()
+# mylist = SList()
+# mylist.append('A')
+# mylist.printlist()
+# mylist.append('B')
+# mylist.printlist()
+# mylist.append('C')
+# mylist.printlist()
+# mylist.insert('D', 1)
+# mylist.printlist()
+# mylist.appendleft('E')
+# mylist.printlist()
+# print(mylist.listSize())
+# mylist.delete(0)
+# mylist.printlist()
+# mylist.delete(3)
+# mylist.printlist()
+# mylist.delete(0)
+# mylist.printlist()
+# mylist.appendleft('A')
+# mylist.printlist()
+
+# from typing import Listnode
+def reverseList(head:Listnode):
+    node, prev = head, None
+    
+    while node:
+        next, node.next = node.next, prev
+        prev, node = node, next
+
+    return prev
+
+
+def toList(node:Listnode):
+    list = []
+    while node:
+        list.append(node.val)
+        node = node.next
+    return list
+
+
+def to_reversed_linkedlist(result:Listnode):
+    prev = None
+    for r in result:
+        node = Listnode(r)
+        node.next = prev
+        prev = node
+
+    return node

@@ -94,3 +94,29 @@ def dailyTemperature(temperatures:List[int]):
     return answer
 
 print(dailyTemperature([73,74,75,71,69,72,76,73]))
+
+def removeDuplicateLetters1(s: str):
+    for char in sorted(set(s)):
+        suffix = s[s.index(char):]
+        print(suffix)
+        if set(s) == set(suffix):
+            return char + removeDuplicateLetters1(suffix.replace(char,''))
+    return ''
+# print(removeDuplicateLetters("cbacdcbc"))
+
+import collections
+def removeDuplicateLetters2(s: str):
+    counter, stack = collections.Counter(s), []
+    
+    for char in s:
+        counter[char] -= 1
+        if char in stack:
+            continue
+            
+        #뒤에 붙일 문자가 남아 있다면 스택에서 제거
+        while stack and char < stack[-1] and counter[stack[-1]] > 0:
+            stack.pop()
+        stack.append(char)
+        
+    return ''.join(stack)
+print(removeDuplicateLetters2("cbacdcbc"))

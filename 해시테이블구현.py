@@ -1,3 +1,5 @@
+#개별 체이닝 방식의 해시테이블
+
 import collections
 class list_node(object):
     def __init__(self, value=0, next = None):
@@ -54,7 +56,10 @@ class hash_map:
         # 인덱스의 첫 번째 노드일 때 삭제처리
         p = self.table[index]
         if p.key == key:
-            self.table[index] = list_node() if p.next is None else p.next
+            if p.next is None:
+                self.table[index] = list_node() 
+            else:
+                self.table[index] = p.next
             return
 
         # 연결 리스트 노드 삭제
@@ -64,5 +69,3 @@ class hash_map:
                 prev.next = p.next
                 return
             prev, p = p, prev.next
-
-    
